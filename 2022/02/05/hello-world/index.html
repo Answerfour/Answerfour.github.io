@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Answerfour">
+    <meta name="keywords" content="Hello World, Answerfour">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Answerfour</title>
+    <title>Hello World | Answerfour</title>
     <link rel="icon" type="image/png" href="/medias/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -200,12 +200,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">Hello World</h1>
                 </div>
             </div>
         </div>
@@ -333,10 +333,15 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2024-02-06
+                    2022-02-05
                 </div>
                 
 
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    2024-02-08
+                </div>
                 
 
                 
@@ -357,59 +362,50 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>pwd看目录</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ls</span> <span class="token parameter variable">-l</span>
+                <h2 id="The-idea-was-initially-conceived"><a href="#The-idea-was-initially-conceived" class="headerlink" title="The idea was initially conceived."></a>The idea was initially conceived.</h2><blockquote>
+<p>事情起源于一个小小的念头。但这并不是一时念起。起初是因为遗憾吧，我的收藏夹里收藏了很多技术，但是我一直都只是在外面观望驻足，备考研究生考试的这一年，我几乎忘记了所有的编程技巧，我对技术的热爱因为现实的自欺而一直停留在过去，直到现在我才敢说我以及走出来了，形而上学上的自我纠结让我好一段时间开始反思自己，这个问题对内上，它解释为自我的发展上限和在社会竞争关系上的意识对待问题，对内上则表现为存在主义上的迷茫，所幸书籍给了我答案，我就像加缪书里的西西弗，想通之前我推石上山，想通之后我还是推石，只不过上不上山无所谓了。</p>
+</blockquote>
+<p>个人博客的第一次搭建是我大一时候的事情了，那个时候我匆匆交了一份问卷上去，现在我终于能好好地再把这张试卷再做一篇。借此顺便记录一下我这几天的学习笔记吧。</p>
+<h2 id="安装Nodejs与git，搭建github仓库"><a href="#安装Nodejs与git，搭建github仓库" class="headerlink" title="安装Nodejs与git，搭建github仓库"></a>安装Nodejs与git，搭建github仓库</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">node</span> <span class="token parameter variable">-v</span>	<span class="token comment">#查看node版本</span>
+<span class="token function">npm</span> <span class="token parameter variable">-v</span>	<span class="token comment">#查看npm版本</span>
+<span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">-g</span> cnpm <span class="token parameter variable">--registry</span><span class="token operator">=</span>http://registry.npm.taobao.org	<span class="token comment">#安装淘宝的cnpm 管理器</span>
+cnpm <span class="token parameter variable">-v</span>	<span class="token comment">#查看cnpm版本</span>
+cnpm <span class="token function">install</span> <span class="token parameter variable">-g</span> hexo-cli    <span class="token comment">#安装hexo框架</span>
+hexo <span class="token parameter variable">-v</span>	<span class="token comment">#查看hexo版本</span>
+<span class="token function">mkdir</span> blog	<span class="token comment">#创建blog目录</span>
+<span class="token builtin class-name">cd</span> blog	 <span class="token comment">#进入blog目录</span>
+<span class="token function">sudo</span> hexo init 	<span class="token comment">#生成博客 初始化博客</span>
+hexo s	<span class="token comment">#启动本地博客服务</span>
+http://localhost:4000/	<span class="token comment">#本地访问地址</span>
 
-<span class="token function">ls</span> <span class="token parameter variable">-a</span>
+hexo n <span class="token string">"我的第一篇文章"</span> <span class="token comment">#创建新的文章 </span>
 
-<span class="token function">touch</span>
+<span class="token comment">#Github创建一个新的仓库 YourGithubName.github.io</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<span class="token function">mkdir</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="配置-config-yml"><a href="#配置-config-yml" class="headerlink" title="配置_config.yml"></a>配置_config.yml</h2><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Deployment</span>
+<span class="token comment">## Docs: https://hexo.io/docs/one-command-deployment</span>
+<span class="token key atrule">deploy</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> <span class="token string">'git'</span> 
+  <span class="token key atrule">repo</span><span class="token punctuation">:</span> <span class="token string">'https://github.com/Answerfour/Answerfour.github.io.git'</span> <span class="token comment">#个人仓库名</span>
+  <span class="token key atrule">branch</span><span class="token punctuation">:</span> <span class="token string">'master'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="部署仓库"><a href="#部署仓库" class="headerlink" title="部署仓库"></a>部署仓库</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cnpm <span class="token function">install</span> <span class="token parameter variable">--save</span> hexo-deployer-git <span class="token comment">#在blog目录下安装git部署插件</span>
+
+hexo d	<span class="token comment">#部署到Github仓库里</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="修改主题"><a href="#修改主题" class="headerlink" title="修改主题"></a>修改主题</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone https://github.com/litten/hexo-theme-yilia.git themes/yilia  <span class="token comment">#下载yilia主题到本地</span>
+
+<span class="token comment">#修改hexo根目录下的 _config.yml 文件 ： theme: yilia</span>
+
+hexo c	<span class="token comment">#清理一下</span>
+hexo g	<span class="token comment">#生成</span>
+hexo d	<span class="token comment">#部署到远程Github仓库</span>
+
+https://YourGithubName.github.io/  <span class="token comment">#查看博客</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
-
-
-
-
-<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> main
-
-<span class="token punctuation">&#123;</span>
-
-​	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"helloworld"</span><span class="token punctuation">,</span><span class="token operator">%</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><p>rm -r删除文件夹以及子目录下的所有文件</p>
-<p>rmdir只能删除空文件夹</p>
-<h3 id="拷贝文件"><a href="#拷贝文件" class="headerlink" title="拷贝文件"></a>拷贝文件</h3><p>cp bingda1.txt bingda2.txt</p>
-<h3 id="拷贝文件夹"><a href="#拷贝文件夹" class="headerlink" title="拷贝文件夹"></a>拷贝文件夹</h3><p>cp -r bingda1 bingda3</p>
-<p>移动(可以重命名文件和文件夹)</p>
-<p>mv bingda3.txt bingda1.txt(起到重命名的作用)</p>
-<h3 id="下载删除软件"><a href="#下载删除软件" class="headerlink" title="下载删除软件"></a>下载删除软件</h3><p>sudo apt update</p>
-<p>sudo apt install tree</p>
-<p>sudo apt rm tree</p>
-<p>apt list –installed 查看已下载的安装包</p>
-<h3 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h3><p>i,a,o进入编辑模式，esc退出</p>
-<p>:wq 保存</p>
-<p>:q!强制退出</p>
-<p>dd删除当前行</p>
-<p>G快速移动到最后一行</p>
-<h4 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h4><p>home  end</p>
-<p>cat 系统查看</p>
-<h3 id="文件权限修改"><a href="#文件权限修改" class="headerlink" title="文件权限修改"></a>文件权限修改</h3><p>chmod 用于修改、设置文件权限。chmod 修改文件权限主要有两种方式：字母法与数字法。 字母法：我们知道文件权限是由字母 r,w,x 来表示的，字母法修改权限的方式为 chmod (u g o a) (+ - &#x3D;) (r w x) (文件名)； u 代表用户，g 代表用户组，o 代表其他用户，a 代表三者全部。 +代表增加权限，-代表撤销权限，&#x3D;代表设置权限</p>
-<p>那么把用户，用户组，其他用户权限全部设置为可读可写可执行可以是： chmod 777 bingda.txt 或者 chmod +133 bingda.tx</p>
-<h3 id="root"><a href="#root" class="headerlink" title="root"></a>root</h3><p>su进入root用户</p>
-<h3 id="cd进入目录"><a href="#cd进入目录" class="headerlink" title="cd进入目录"></a>cd进入目录</h3><p>cd ..                  返回上一级目录</p>
-<p>cd ..&#x2F;..               返回上两级目录</p>
-<p>cd或cd ~           返回home目录</p>
-<p>cd &#x2F;                   返回根目录</p>
-<p>cd -                   返回刚才的目录</p>
-<p>cd - 目录名       返回指定目录</p>
 
                 
             </div>
@@ -436,7 +432,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2024/02/06/linusnotepad/">http://example.com/2024/02/06/linusnotepad/</a>
+                    <a href="http://example.com/2022/02/05/hello-world/">http://example.com/2022/02/05/hello-world/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -646,13 +642,13 @@
                 <i class="far fa-dot-circle"></i>&nbsp;Current
             </div>
             <div class="card">
-                <a href="/2024/02/06/linusnotepad/">
+                <a href="/2022/02/05/hello-world/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">Hello World</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -663,7 +659,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-02-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-05
                             </span>
                         <span class="publish-author">
                             
@@ -681,10 +677,10 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
+                Current&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2024/02/06/hello-world/">
+                <a href="/2022/02/05/hello-world/">
                     <div class="card-image">
                         
                         
@@ -701,7 +697,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-02-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-05
                             </span>
                         <span class="publish-author">
                             
@@ -711,6 +707,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -842,60 +839,6 @@
 
 
     <footer class="page-footer bg-color">
-    
-        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
-<style>
-    .aplayer .aplayer-lrc p {
-        
-        display: none;
-        
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 16px !important;
-    }
-
-    .aplayer .aplayer-lrc p.aplayer-lrc-current {
-        
-        display: none;
-        
-        font-size: 15px;
-        color: #42b983;
-    }
-
-    
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
-        left: -66px !important;
-    }
-
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
-        left: 0px !important;
-    }
-
-    
-</style>
-<div class="">
-    
-    <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="netease"
-                   type="playlist"
-                   id="503838841"
-                   fixed='true'
-                   autoplay='false'
-                   theme='#42b983'
-                   loop='all'
-                   order='random'
-                   preload='auto'
-                   volume='0.7'
-                   list-folded='true'
-        >
-        </meting-js>
-    </div>
-</div>
-
-<script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
-
     
     <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">

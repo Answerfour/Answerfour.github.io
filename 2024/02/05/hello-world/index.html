@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="zh-CN">
 
 
 <head>
@@ -57,7 +57,7 @@
       
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
-      <span>Index</span>
+      <span>首页</span>
     </a>
     
   </li>
@@ -68,14 +68,14 @@
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
-      <span>About</span>
+      <span>关于</span>
     </a>
     
   </li>
   
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
     </a>
   </li>
 </ul>
@@ -105,7 +105,7 @@
 			
 			    <i class="fa-fw fas fa-home"></i>
 			
-			Index
+			首页
 		</a>
           
         </li>
@@ -116,7 +116,7 @@
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
-			About
+			关于
 		</a>
           
         </li>
@@ -320,7 +320,7 @@
                 <div class="col s7">
                     
                           <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            <span class="chip bg-color">无标签</span>
                           </div>
                     
                 </div>
@@ -332,14 +332,14 @@
             <div class="post-info">
                 
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2022-02-05
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-02-05
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
                     2024-02-08
                 </div>
                 
@@ -362,11 +362,11 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="The-idea-was-initially-conceived"><a href="#The-idea-was-initially-conceived" class="headerlink" title="The idea was initially conceived."></a>The idea was initially conceived.</h2><blockquote>
+                <h3 id="The-idea-was-initially-conceived"><a href="#The-idea-was-initially-conceived" class="headerlink" title="The idea was initially conceived."></a>The idea was initially conceived.</h3><blockquote>
 <p>事情起源于一个小小的念头。但这并不是一时念起。起初是因为遗憾吧，我的收藏夹里收藏了很多技术，但是我一直都只是在外面观望驻足，备考研究生考试的这一年，我几乎忘记了所有的编程技巧，我对技术的热爱因为现实的自欺而一直停留在过去，直到现在我才敢说我以及走出来了，形而上学上的自我纠结让我好一段时间开始反思自己，这个问题对内上，它解释为自我的发展上限和在社会竞争关系上的意识对待问题，对内上则表现为存在主义上的迷茫，所幸书籍给了我答案，我就像加缪书里的西西弗，想通之前我推石上山，想通之后我还是推石，只不过上不上山无所谓了。</p>
 </blockquote>
 <p>个人博客的第一次搭建是我大一时候的事情了，那个时候我匆匆交了一份问卷上去，现在我终于能好好地再把这张试卷再做一篇。借此顺便记录一下我这几天的学习笔记吧。</p>
-<h2 id="安装Nodejs与git，搭建github仓库"><a href="#安装Nodejs与git，搭建github仓库" class="headerlink" title="安装Nodejs与git，搭建github仓库"></a>安装Nodejs与git，搭建github仓库</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">node</span> <span class="token parameter variable">-v</span>	<span class="token comment">#查看node版本</span>
+<h3 id="安装Nodejs与git，搭建github仓库"><a href="#安装Nodejs与git，搭建github仓库" class="headerlink" title="安装Nodejs与git，搭建github仓库"></a>安装Nodejs与git，搭建github仓库</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">node</span> <span class="token parameter variable">-v</span>	<span class="token comment">#查看node版本</span>
 <span class="token function">npm</span> <span class="token parameter variable">-v</span>	<span class="token comment">#查看npm版本</span>
 <span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">-g</span> cnpm <span class="token parameter variable">--registry</span><span class="token operator">=</span>http://registry.npm.taobao.org	<span class="token comment">#安装淘宝的cnpm 管理器</span>
 cnpm <span class="token parameter variable">-v</span>	<span class="token comment">#查看cnpm版本</span>
@@ -383,18 +383,18 @@ hexo n <span class="token string">"我的第一篇文章"</span> <span class="to
 <span class="token comment">#Github创建一个新的仓库 YourGithubName.github.io</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="配置-config-yml"><a href="#配置-config-yml" class="headerlink" title="配置_config.yml"></a>配置_config.yml</h2><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Deployment</span>
+<h3 id="配置-config-yml"><a href="#配置-config-yml" class="headerlink" title="配置_config.yml"></a>配置_config.yml</h3><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Deployment</span>
 <span class="token comment">## Docs: https://hexo.io/docs/one-command-deployment</span>
 <span class="token key atrule">deploy</span><span class="token punctuation">:</span>
   <span class="token key atrule">type</span><span class="token punctuation">:</span> <span class="token string">'git'</span> 
   <span class="token key atrule">repo</span><span class="token punctuation">:</span> <span class="token string">'https://github.com/Answerfour/Answerfour.github.io.git'</span> <span class="token comment">#个人仓库名</span>
   <span class="token key atrule">branch</span><span class="token punctuation">:</span> <span class="token string">'master'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="部署仓库"><a href="#部署仓库" class="headerlink" title="部署仓库"></a>部署仓库</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cnpm <span class="token function">install</span> <span class="token parameter variable">--save</span> hexo-deployer-git <span class="token comment">#在blog目录下安装git部署插件</span>
+<h3 id="部署仓库"><a href="#部署仓库" class="headerlink" title="部署仓库"></a>部署仓库</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cnpm <span class="token function">install</span> <span class="token parameter variable">--save</span> hexo-deployer-git <span class="token comment">#在blog目录下安装git部署插件</span>
 
 hexo d	<span class="token comment">#部署到Github仓库里</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="修改主题"><a href="#修改主题" class="headerlink" title="修改主题"></a>修改主题</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone https://github.com/litten/hexo-theme-yilia.git themes/yilia  <span class="token comment">#下载yilia主题到本地</span>
+<h3 id="修改主题"><a href="#修改主题" class="headerlink" title="修改主题"></a>修改主题</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone https://github.com/litten/hexo-theme-yilia.git themes/yilia  <span class="token comment">#下载yilia主题到本地</span>
 
 <span class="token comment">#修改hexo根目录下的 _config.yml 文件 ： theme: yilia</span>
 
@@ -418,7 +418,7 @@ https://YourGithubName.github.io/  <span class="token comment">#查看博客</sp
             <div class="reprint__author">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-user">
-                        Author:
+                        文章作者:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -428,23 +428,23 @@ https://YourGithubName.github.io/  <span class="token comment">#查看博客</sp
             <div class="reprint__type">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-link">
-                        Link:
+                        文章链接:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/02/05/hello-world/">http://example.com/2022/02/05/hello-world/</a>
+                    <a href="https://answerfour.github.io/2024/02/05/hello-world/">https://answerfour.github.io/2024/02/05/hello-world/</a>
                 </span>
             </div>
             <div class="reprint__notice">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-copyright">
-                        Reprint policy:
+                        版权声明:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    All articles in this blog are used except for special statements
+                    本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    reprint polocy. If reproduced, please indicate source
+                    许可协议。转载请注明来源
                     <a href="/about" target="_blank">煮洋葱</a>
                     !
                 </span>
@@ -454,7 +454,7 @@ https://YourGithubName.github.io/  <span class="token comment">#查看博客</sp
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
         M.toast({html: toastHTML})
       });
 
@@ -469,7 +469,7 @@ https://YourGithubName.github.io/  <span class="token comment">#查看博客</sp
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -639,10 +639,10 @@ https://YourGithubName.github.io/  <span class="token comment">#查看博客</sp
         
         <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;Current
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2022/02/05/hello-world/">
+                <a href="/2024/02/05/hello-world/">
                     <div class="card-image">
                         
                         
@@ -659,7 +659,7 @@ https://YourGithubName.github.io/  <span class="token comment">#查看博客</sp
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-02-05
                             </span>
                         <span class="publish-author">
                             
@@ -677,10 +677,10 @@ https://YourGithubName.github.io/  <span class="token comment">#查看博客</sp
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Current&nbsp;<i class="far fa-dot-circle"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2022/02/05/hello-world/">
+                <a href="/2024/02/05/hello-world/">
                     <div class="card-image">
                         
                         
@@ -697,7 +697,7 @@ https://YourGithubName.github.io/  <span class="token comment">#查看博客</sp
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-02-05
                             </span>
                         <span class="publish-author">
                             
@@ -740,7 +740,7 @@ https://YourGithubName.github.io/  <span class="token comment">#查看博客</sp
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget card" style="background-color: white;">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
             <div id="toc-content"></div>
         </div>
     </div>
@@ -907,8 +907,8 @@ https://YourGithubName.github.io/  <span class="token comment">#查看博客</sp
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
-            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
                    class="search-input">
         </div>
         <div id="searchResult"></div>

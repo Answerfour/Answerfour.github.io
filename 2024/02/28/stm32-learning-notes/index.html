@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Answerfour">
+    <meta name="keywords" content="STM32 Learning Notes, Answerfour">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | Answerfour</title>
+    <title>STM32 Learning Notes | Answerfour</title>
     <link rel="icon" type="image/png" href="/medias/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -266,12 +266,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">STM32 Learning Notes</h1>
                 </div>
             </div>
         </div>
@@ -387,8 +387,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/hexo/">
-                                <span class="chip bg-color">hexo</span>
+                            <a href="/tags/STM32/">
+                                <span class="chip bg-color">STM32</span>
                             </a>
                         
                     </div>
@@ -399,8 +399,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Life/" class="post-category">
-                                Life
+                            <a href="/categories/%E6%AF%95%E8%AE%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                毕设学习笔记
                             </a>
                         
                     </div>
@@ -412,7 +412,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-02-05
+                    2024-02-28
                 </div>
                 
 
@@ -446,53 +446,40 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="The-idea-was-initially-conceived"><a href="#The-idea-was-initially-conceived" class="headerlink" title="The idea was initially conceived."></a>The idea was initially conceived.</h3><blockquote>
-<p>事情起源于一个小小的念头。但这并不是一时念起。起初是因为遗憾吧，我的收藏夹里收藏了很多技术，但是我一直都只是在外面观望驻足，备考研究生考试的这一年，我几乎忘记了所有的编程技巧，我对技术的热爱因为现实的自欺而一直停留在过去，直到现在我才敢说我以及走出来了，形而上学上的自我纠结让我好一段时间开始反思自己，这个问题对内上，它解释为自我的发展上限和在社会竞争关系上的意识对待问题，对内上则表现为存在主义上的迷茫，所幸书籍给了我答案，我就像加缪书里的西西弗，想通之前我推石上山，想通之后我还是推石，只不过上不上山无所谓了。</p>
-</blockquote>
-<p>个人博客的第一次搭建是我大一时候的事情了，那个时候我匆匆交了一份问卷上去，现在我终于能好好地再把这张试卷再做一篇。借此顺便记录一下我这几天的学习笔记吧。</p>
-<h3 id="1-安装Nodejs-git，搭建github仓库"><a href="#1-安装Nodejs-git，搭建github仓库" class="headerlink" title="1 安装Nodejs&#x2F;git，搭建github仓库"></a>1 安装Nodejs&#x2F;git，搭建github仓库</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">node</span> <span class="token parameter variable">-v</span>	<span class="token comment">#查看node版本</span>
-<span class="token function">npm</span> <span class="token parameter variable">-v</span>	<span class="token comment">#查看npm版本</span>
-<span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">-g</span> cnpm <span class="token parameter variable">--registry</span><span class="token operator">=</span>http://registry.npm.taobao.org	<span class="token comment">#安装淘宝的cnpm 管理器</span>
-cnpm <span class="token parameter variable">-v</span>	<span class="token comment">#查看cnpm版本</span>
-cnpm <span class="token function">install</span> <span class="token parameter variable">-g</span> hexo-cli    <span class="token comment">#安装hexo框架</span>
-hexo <span class="token parameter variable">-v</span>	<span class="token comment">#查看hexo版本</span>
-<span class="token function">mkdir</span> blog	<span class="token comment">#创建blog目录</span>
-<span class="token builtin class-name">cd</span> blog	 <span class="token comment">#进入blog目录</span>
-<span class="token function">sudo</span> hexo init 	<span class="token comment">#生成博客 初始化博客</span>
-hexo s	<span class="token comment">#启动本地博客服务</span>
-http://localhost:4000/	<span class="token comment">#本地访问地址</span>
+                <p><a target="_blank" rel="noopener" href="https://www.bilibili.com/opus/814075999736037492?spm_id_from=333.999.0.0">STM32入门教程-2023版 细致讲解 中文字幕 - 哔哩哔哩 (bilibili.com)</a></p>
+<h2 id="start"><a href="#start" class="headerlink" title="start"></a>start</h2><h3 id="路径1"><a href="#路径1" class="headerlink" title="路径1"></a>路径1</h3><p><code>\STM32入门教程资料\固件库\STM32F10x_StdPeriph_Lib_V3.5.0\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\startup</code></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">startup_stm32f10x_md.s   <span class="token comment">#启动文件</span>
 
-hexo n <span class="token string">"我的第一篇文章"</span> <span class="token comment">#创建新的文章 </span>
+system_stm32f10x.c <span class="token comment">#配置时钟</span>
 
-<span class="token comment">#Github创建一个新的仓库 YourGithubName.github.io</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+system_stm32f10x.h
 
-<h3 id="2-检测4000端口是否被占用"><a href="#2-检测4000端口是否被占用" class="headerlink" title="2 检测4000端口是否被占用"></a>2 检测4000端口是否被占用</h3><pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">netstat -ano #列出所有端口的使用情况
-			 #列出计算机上所有端口的使用情况，包括TCP和UDP端口，以及这些端口对应的进程ID（PID）。-a 参数表示显示所有连接和侦听端口，-n 参数表示以数字形式显示地址和端口号，-o 参数显示拥有的进程ID。
-netstat -aon|findstr &quot;4000&quot; #查看被占用端口对应的 PID
-tasklist|findstr &quot;30806&quot; #查看指定 PID 的进程
-taskkill &#x2F;T &#x2F;F &#x2F;PID 30806  #结束进程#强制（&#x2F;F参数）杀死 pid 为 9088 的所有进程包括子进程（&#x2F;T参数）
-						   #之后我们就可以结束掉这个进程，这样我们就可以释放该端口来使用了<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+stm32f10x.h <span class="token comment">#外设寄存器文件，类似reg52.h，描述寄存器与地址</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="3-配置-config-yml"><a href="#3-配置-config-yml" class="headerlink" title="3 配置_config.yml"></a>3 配置_config.yml</h3><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Deployment</span>
-<span class="token comment">## Docs: https://hexo.io/docs/one-command-deployment</span>
-<span class="token key atrule">deploy</span><span class="token punctuation">:</span>
-  <span class="token key atrule">type</span><span class="token punctuation">:</span> <span class="token string">'git'</span> 
-  <span class="token key atrule">repo</span><span class="token punctuation">:</span> <span class="token string">'https://github.com/Answerfour/Answerfour.github.io.git'</span> <span class="token comment">#个人仓库名</span>
-  <span class="token key atrule">branch</span><span class="token punctuation">:</span> <span class="token string">'master'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="路径2"><a href="#路径2" class="headerlink" title="路径2"></a>路径2</h3><p><code>\STM32入门教程资料\固件库\STM32F10x_StdPeriph_Lib_V3.5.0\Libraries\CMSIS\CM3\CoreSupport</code></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">core_cm3.c <span class="token comment">#内核寄存器描述</span>
 
-<h3 id="4-部署仓库"><a href="#4-部署仓库" class="headerlink" title="4 部署仓库"></a>4 部署仓库</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cnpm <span class="token function">install</span> <span class="token parameter variable">--save</span> hexo-deployer-git <span class="token comment">#在blog目录下安装git部署插件</span>
+core_cm3.h<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-hexo d	<span class="token comment">#部署到Github仓库里</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="5-修改主题"><a href="#5-修改主题" class="headerlink" title="5 修改主题"></a>5 修改主题</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone https://github.com/litten/hexo-theme-yilia.git themes/yilia  <span class="token comment">#下载yilia主题到本地</span>
 
-<span class="token comment">#修改hexo根目录下的 _config.yml 文件 ： theme: yilia</span>
+<h2 id="library-标准外设驱动库函数"><a href="#library-标准外设驱动库函数" class="headerlink" title="library 标准外设驱动库函数"></a>library 标准外设驱动库函数</h2><h3 id="路径1-1"><a href="#路径1-1" class="headerlink" title="路径1"></a>路径1</h3><p><code>\STM32入门教程资料\固件库\STM32F10x_StdPeriph_Lib_V3.5.0\Libraries\STM32F10x_StdPeriph_Driver</code></p>
+<p>src和inc文件里面的所有文件</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">mics.c  <span class="token comment">#内核的库函数，其他是内核外的库函数</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-hexo c	<span class="token comment">#清理一下</span>
-hexo g	<span class="token comment">#生成</span>
-hexo d	<span class="token comment">#部署到远程Github仓库</span>
 
-https://YourGithubName.github.io/  <span class="token comment">#查看博客</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="user"><a href="#user" class="headerlink" title="user"></a>user</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">stm32f10x_conf.h    <span class="token comment">#配置库函数头文件包含关系，检查函数定义</span>
+
+stm32f10x_it.c放中断函数
+
+stm32f10x_it.h<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="复制字符串、包含外设库"><a href="#复制字符串、包含外设库" class="headerlink" title="复制字符串、包含外设库"></a>复制字符串、包含外设库</h2><p><img src="https://i1.hdslb.com/bfs/note/10928388fe2ccd500b9ac4383da035fb09f78b94.png@1054w_772h.webp" alt="img"></p>
+<p><img src="https://i1.hdslb.com/bfs/note/17cd28850cab71630152b509b117be6a7f145d67.png@1066w_780h.webp" alt="img"></p>
+<p><img src="https://i1.hdslb.com/bfs/note/942541aa157abb163ebfb5449a729b553c47725e.png@1140w_748h.webp" alt="img"></p>
 
                 
             </div>
@@ -519,7 +506,7 @@ https://YourGithubName.github.io/  <span class="token comment">#查看博客</sp
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2024/02/05/hello-world/">http://example.com/2024/02/05/hello-world/</a>
+                    <a href="http://example.com/2024/02/28/stm32-learning-notes/">http://example.com/2024/02/28/stm32-learning-notes/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -557,8 +544,8 @@ https://YourGithubName.github.io/  <span class="token comment">#查看博客</sp
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/hexo/">
-                                    <span class="chip bg-color">hexo</span>
+                                <a href="/tags/STM32/">
+                                    <span class="chip bg-color">STM32</span>
                                 </a>
                             
                         </div>
@@ -728,9 +715,60 @@ https://YourGithubName.github.io/  <span class="token comment">#查看博客</sp
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2024/02/28/stm32-learning-notes/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="STM32 Learning Notes">
+                        
+                        <span class="card-title">STM32 Learning Notes</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-02-28
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%AF%95%E8%AE%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    毕设学习笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/STM32/">
+                        <span class="chip bg-color">STM32</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2024/02/16/linux-learning-notes/">
                     <div class="card-image">
@@ -748,9 +786,9 @@ https://YourGithubName.github.io/  <span class="token comment">#查看博客</sp
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-02-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-02-16
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -768,56 +806,6 @@ https://YourGithubName.github.io/  <span class="token comment">#查看博客</sp
                     
                     <a href="/tags/Linux/">
                         <span class="chip bg-color">Linux</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2024/02/05/hello-world/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-02-05
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Life/" class="post-category">
-                                    Life
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
                     </a>
                     
                 </div>

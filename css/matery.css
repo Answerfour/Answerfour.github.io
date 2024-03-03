@@ -240,8 +240,11 @@ mark {
     margin-bottom: 0;
 }
 
-.bg-color {
+/* .bg-color {
     background-image: linear-gradient(to right, #57c3c2 0%, #10aec2 100%);
+} */
+.bg-color {
+    background-image: linear-gradient(to right, #57c3c2 0%, #12a182 100%);
 }
 
 .text-color {

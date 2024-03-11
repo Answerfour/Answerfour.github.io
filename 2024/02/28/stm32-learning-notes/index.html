@@ -465,7 +465,7 @@ core_cm3.h<span aria-hidden="true" class="line-numbers-rows"><span></span><span>
 stm32f10x_it.c放中断函数
 stm32f10x_it.h<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="xxxxxxxxxx-git-clone-https-github-com-litten-hexo-theme-yilia-git-themes-yilia-下载yilia主题到本地​-修改hexo根目录下的-config-yml-文件-：-theme-yilia​hexo-c-清理一下hexo-g-生成hexo-d-部署到远程Github仓库​https-YourGithubName-github-io-查看博客bash"><a href="#xxxxxxxxxx-git-clone-https-github-com-litten-hexo-theme-yilia-git-themes-yilia-下载yilia主题到本地​-修改hexo根目录下的-config-yml-文件-：-theme-yilia​hexo-c-清理一下hexo-g-生成hexo-d-部署到远程Github仓库​https-YourGithubName-github-io-查看博客bash" class="headerlink" title="xxxxxxxxxx git clone https://github.com/litten/hexo-theme-yilia.git themes&#x2F;yilia  #下载yilia主题到本地​#修改hexo根目录下的 _config.yml 文件 ： theme: yilia​hexo c  #清理一下hexo g  #生成hexo d  #部署到远程Github仓库​https://YourGithubName.github.io/  #查看博客bash"></a>xxxxxxxxxx git clone <a target="_blank" rel="noopener" href="https://github.com/litten/hexo-theme-yilia.git">https://github.com/litten/hexo-theme-yilia.git</a> themes&#x2F;yilia  #下载yilia主题到本地​#修改hexo根目录下的 _config.yml 文件 ： theme: yilia​hexo c  #清理一下hexo g  #生成hexo d  #部署到远程Github仓库​<a target="_blank" rel="noopener" href="https://yourgithubname.github.io/">https://YourGithubName.github.io/</a>  #查看博客bash</h3><p><img src="https://i1.hdslb.com/bfs/note/10928388fe2ccd500b9ac4383da035fb09f78b94.png@1054w_772h.webp" alt="img"></p>
+<h3 id="1-4-复制字符串、包含外设库"><a href="#1-4-复制字符串、包含外设库" class="headerlink" title="1.4 复制字符串、包含外设库"></a>1.4 复制字符串、包含外设库</h3><p><img src="https://i1.hdslb.com/bfs/note/10928388fe2ccd500b9ac4383da035fb09f78b94.png@1054w_772h.webp" alt="img"></p>
 <p><img src="https://i1.hdslb.com/bfs/note/17cd28850cab71630152b509b117be6a7f145d67.png@1066w_780h.webp" alt="img"></p>
 <p><img src="https://i1.hdslb.com/bfs/note/942541aa157abb163ebfb5449a729b553c47725e.png@1140w_748h.webp" alt="img"></p>
 <h2 id="2-外设学习"><a href="#2-外设学习" class="headerlink" title="2 外设学习"></a>2 外设学习</h2><h3 id="2-1-GPIO"><a href="#2-1-GPIO" class="headerlink" title="2.1 GPIO"></a>2.1 GPIO</h3><h4 id="2-1-1-输出"><a href="#2-1-1-输出" class="headerlink" title="2.1.1 输出"></a>2.1.1 输出</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">/*开启时钟*/</span>
@@ -531,11 +531,11 @@ EXTI_InitStructure<span class="token punctuation">.</span>EXTI_Trigger <span cla
 <span class="token function">EXTI_Init</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>EXTI_InitStructure<span class="token punctuation">)</span><span class="token punctuation">;</span>								<span class="token comment">//将结构体变量交给EXTI_Init，配置EXTI外设</span>
 
 <span class="token comment">/*NVIC中断分组*/</span>
-<span class="token function">NVIC_PriorityGroupConfig</span><span class="token punctuation">(</span>NVIC_PriorityGroup_2<span class="token punctuation">)</span><span class="token punctuation">;</span>				<span class="token comment">//配置NVIC为分组2</span>
-<span class="token comment">//即抢占优先级范围：0~3，响应优先级范围：0~3</span>
-<span class="token comment">//此分组配置在整个工程中仅需调用一次</span>
-<span class="token comment">//若有多个中断，可以把此代码放在main函数内，while循环之前</span>
-<span class="token comment">//若调用多次配置分组的代码，则后执行的配置会覆盖先执行的配置</span>
+<span class="token function">NVIC_PriorityGroupConfig</span><span class="token punctuation">(</span>NVIC_PriorityGroup_2<span class="token punctuation">)</span><span class="token punctuation">;</span>	    <span class="token comment">//配置NVIC为分组2</span>
+													<span class="token comment">//即抢占优先级范围：0~3，响应优先级范围：0~3</span>
+													<span class="token comment">//此分组配置在整个工程中仅需调用一次</span>
+													<span class="token comment">//若有多个中断，可以把此代码放在main函数内，while循环之前</span>
+													<span class="token comment">//若调用多次配置分组的代码，则后执行的配置会覆盖先执行的配置</span>
 
 <span class="token comment">/*NVIC配置*/</span>
 NVIC_InitTypeDef NVIC_InitStructure<span class="token punctuation">;</span>						<span class="token comment">//定义结构体变量</span>

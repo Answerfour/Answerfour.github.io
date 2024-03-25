@@ -419,7 +419,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-03-11
+                    2024-03-25
                 </div>
                 
 
@@ -468,7 +468,66 @@ stm32f10x_it.h<span aria-hidden="true" class="line-numbers-rows"><span></span><s
 <h3 id="1-4-复制字符串、包含外设库"><a href="#1-4-复制字符串、包含外设库" class="headerlink" title="1.4 复制字符串、包含外设库"></a>1.4 复制字符串、包含外设库</h3><p><img src="https://i1.hdslb.com/bfs/note/10928388fe2ccd500b9ac4383da035fb09f78b94.png@1054w_772h.webp" alt="img"></p>
 <p><img src="https://i1.hdslb.com/bfs/note/17cd28850cab71630152b509b117be6a7f145d67.png@1066w_780h.webp" alt="img"></p>
 <p><img src="https://i1.hdslb.com/bfs/note/942541aa157abb163ebfb5449a729b553c47725e.png@1140w_748h.webp" alt="img"></p>
-<h2 id="2-外设学习"><a href="#2-外设学习" class="headerlink" title="2 外设学习"></a>2 外设学习</h2><h3 id="2-1-GPIO"><a href="#2-1-GPIO" class="headerlink" title="2.1 GPIO"></a>2.1 GPIO</h3><h4 id="2-1-1-输出"><a href="#2-1-1-输出" class="headerlink" title="2.1.1 输出"></a>2.1.1 输出</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">/*开启时钟*/</span>
+<h2 id="2-外设学习"><a href="#2-外设学习" class="headerlink" title="2 外设学习"></a>2 外设学习</h2><h3 id="2-1-GPIO"><a href="#2-1-GPIO" class="headerlink" title="2.1 GPIO"></a>2.1 GPIO</h3><p>io口不初始化，默认浮空输入</p>
+<table>
+<thead>
+<tr>
+<th align="left">八种模式</th>
+<th align="center"><strong>模式名称</strong></th>
+<th align="center"><strong>性质</strong></th>
+<th align="center"><strong>特征</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">GPIO_Mode_IN_FLOATING</td>
+<td align="center">浮空输入</td>
+<td align="center">数字输入</td>
+<td align="center">可读取引脚电平，若引脚悬空，则电平不确定</td>
+</tr>
+<tr>
+<td align="left">GPIO_Mode_IPU</td>
+<td align="center">上拉输入</td>
+<td align="center">数字输入</td>
+<td align="center">可读取引脚电平，内部连接上拉电阻，悬空时默认高电平</td>
+</tr>
+<tr>
+<td align="left">GPIO_Mode_IPD</td>
+<td align="center">下拉输入</td>
+<td align="center">数字输入</td>
+<td align="center">可读取引脚电平，内部连接下拉电阻，悬空时默认低电平</td>
+</tr>
+<tr>
+<td align="left">GPIO_Mode_AIN</td>
+<td align="center">模拟输入</td>
+<td align="center">模拟输入</td>
+<td align="center">GPIO无效，引脚直接接入内部ADC</td>
+</tr>
+<tr>
+<td align="left">GPIO_Mode_Out_OD</td>
+<td align="center">开漏输出</td>
+<td align="center">数字输出</td>
+<td align="center">可输出引脚电平，高电平为高阻态，低电平接VSS</td>
+</tr>
+<tr>
+<td align="left">GPIO_Mode_Out_PP</td>
+<td align="center">推挽输出</td>
+<td align="center">数字输出</td>
+<td align="center">可输出引脚电平，高电平接VDD，低电平接VSS</td>
+</tr>
+<tr>
+<td align="left">GPIO_Mode_AF_OD</td>
+<td align="center">复用开漏输出</td>
+<td align="center">数字输出</td>
+<td align="center">由片上外设控制，高电平为高阻态，低电平接VSS</td>
+</tr>
+<tr>
+<td align="left">GPIO_Mode_AF_PP</td>
+<td align="center">复用推挽输出</td>
+<td align="center">数字输出</td>
+<td align="center">由片上外设控制，高电平接VDD，低电平接VSS</td>
+</tr>
+</tbody></table>
+<h4 id="2-1-1-输出"><a href="#2-1-1-输出" class="headerlink" title="2.1.1 输出"></a>2.1.1 输出</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">/*开启时钟*/</span>
 <span class="token function">RCC_APB2PeriphClockCmd</span><span class="token punctuation">(</span>RCC_APB2Periph_GPIOA<span class="token punctuation">,</span> ENABLE<span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">//开启GPIOA的时钟</span>
 <span class="token comment">//使用各个外设前必须开启时钟，否则对外设的操作无效</span>
 
@@ -516,8 +575,65 @@ GPIO_InitStructure<span class="token punctuation">.</span>GPIO_Speed <span class
     KeyNum <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>												<span class="token comment">//置键码为1</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>oled暂滞</p>
-<h3 id="2-2-EXIT"><a href="#2-2-EXIT" class="headerlink" title="2.2 EXIT"></a>2.2 EXIT</h3><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">/*开启时钟*/</span>
+
+
+<h3 id="OLED调试"><a href="#OLED调试" class="headerlink" title="OLED调试"></a>OLED调试</h3><p>暂无</p>
+<p>•68个可屏蔽中断通道，包含EXTI、TIM、ADC、USART、SPI、I2C、RTC等多个外设</p>
+<h3 id="2-2-EXIT"><a href="#2-2-EXIT" class="headerlink" title="2.2 EXIT"></a>2.2 EXIT</h3><p>•NVIC的中断优先级由优先级寄存器的4位（0~15）决定，这4位可以进行切分，分为高n位的抢占优先级和低4-n位的响应优先级</p>
+<p>•抢占优先级高的可以中断嵌套，响应优先级高的可以优先排队，抢占优先级和响应优先级均相同的按中断号排队</p>
+<table>
+<thead>
+<tr>
+<th><strong>分组方式</strong></th>
+<th><strong>抢占优先级</strong></th>
+<th><strong>响应优先级</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>分组0</td>
+<td>0位，取值为0</td>
+<td>4位，取值为0~15</td>
+</tr>
+<tr>
+<td>分组1</td>
+<td>1位，取值为0~1</td>
+<td>3位，取值为0~7</td>
+</tr>
+<tr>
+<td>分组2</td>
+<td>2位，取值为0~3</td>
+<td>2位，取值为0~3</td>
+</tr>
+<tr>
+<td>分组3</td>
+<td>3位，取值为0~7</td>
+<td>1位，取值为0~1</td>
+</tr>
+<tr>
+<td>分组4</td>
+<td>4位，取值为0~15</td>
+<td>0位，取值为0</td>
+</tr>
+</tbody></table>
+<p>主要函数介绍</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">EXTI_DeInit</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">;</span>									<span class="token comment">//用于将外部中断模块恢复到初始状态。</span>
+<span class="token keyword">void</span> <span class="token function">EXTI_Init</span><span class="token punctuation">(</span>EXTI_InitTypeDef<span class="token operator">*</span> EXTI_InitStruct<span class="token punctuation">)</span><span class="token punctuation">;</span>		<span class="token comment">//用给定的配置初始化外部中断。</span>
+<span class="token keyword">void</span> <span class="token function">EXTI_StructInit</span><span class="token punctuation">(</span>EXTI_InitTypeDef<span class="token operator">*</span> EXTI_InitStruct<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//初始化指定的外部中断配置结构体。</span>
+<span class="token keyword">void</span> <span class="token function">EXTI_GenerateSWInterrupt</span><span class="token punctuation">(</span><span class="token class-name">uint32_t</span> EXTI_Line<span class="token punctuation">)</span><span class="token punctuation">;</span>		<span class="token comment">//产生软件触发的外部中断。</span>
+
+<span class="token comment">//在主函数内查看，触发了标志位不一定会挂起中断，这是区别</span>
+FlagStatus <span class="token function">EXTI_GetFlagStatus</span><span class="token punctuation">(</span><span class="token class-name">uint32_t</span> EXTI_Line<span class="token punctuation">)</span><span class="token punctuation">;</span>		<span class="token comment">/*功能：获取指定外部中断线的触发标志位状态。
+													      返回值：标志位状态，可以是SET或者RESET。	*/</span>
+<span class="token keyword">void</span> <span class="token function">EXTI_ClearFlag</span><span class="token punctuation">(</span><span class="token class-name">uint32_t</span> EXTI_Line<span class="token punctuation">)</span><span class="token punctuation">;</span>				<span class="token comment">//清除指定外部中断线的触发标志位。</span>
+
+<span class="token comment">//在中断函数内查看，此时可以查看是否已经开启了中断</span>
+ITStatus <span class="token function">EXTI_GetITStatus</span><span class="token punctuation">(</span><span class="token class-name">uint32_t</span> EXTI_Line<span class="token punctuation">)</span><span class="token punctuation">;</span>			<span class="token comment">/*功能：获取指定外部中断线的中断挂起状态。
+														  返回值：中断挂起状态，可以是SET或者RESET。*/</span>
+<span class="token keyword">void</span> <span class="token function">EXTI_ClearITPendingBit</span><span class="token punctuation">(</span><span class="token class-name">uint32_t</span> EXTI_Line<span class="token punctuation">)</span><span class="token punctuation">;</span>		<span class="token comment">//清除指定外部中断线的中断挂起位。  </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">/*开启时钟*/</span>
 <span class="token function">RCC_APB2PeriphClockCmd</span><span class="token punctuation">(</span>RCC_APB2Periph_AFIO<span class="token punctuation">,</span> ENABLE<span class="token punctuation">)</span><span class="token punctuation">;</span>		<span class="token comment">//开启AFIO的时钟，外部中断必须开启AFIO的时钟</span>
 <span class="token comment">/*AFIO选择中断引脚*/</span>
 <span class="token function">GPIO_EXTILineConfig</span><span class="token punctuation">(</span>GPIO_PortSourceGPIOB<span class="token punctuation">,</span> GPIO_PinSource14<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//将外部中断的14号线映射到GPIOB，即选择PB14为外部中断引脚</span>
@@ -560,7 +676,18 @@ NVIC_InitStructure<span class="token punctuation">.</span>NVIC_IRQChannelSubPrio
 	<span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="2-3-TIM"><a href="#2-3-TIM" class="headerlink" title="2.3 TIM"></a>2.3 TIM</h3><h4 id="2-3-1-定时中断"><a href="#2-3-1-定时中断" class="headerlink" title="2.3.1 定时中断"></a>2.3.1 定时中断</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">/*开启时钟*/</span>
+<h3 id="2-3-TIM"><a href="#2-3-TIM" class="headerlink" title="2.3 TIM"></a>2.3 TIM</h3><p>预分频器的工作的工作原理是，定时器时钟源每tick一次，<strong>预分频器计数器</strong>值+1，直到达到预分频器的设定值，然后再tick一次后计数器归零，同时，<strong>CNT计数器</strong>值+1。</p>
+<p>由此可以看出，因为达到最大值后还要再tick一次才归零，所以定时器时钟频率应该为Fosc&#x2F;(PSC+ 1)。其中Fosc是定时器的时钟源。比如想对时钟源进行72分频，那么预分频器的值就应该设置为71。</p>
+<p>由此可以看出，因为达到最大值后还要再tick一次才归零，所以定时器时钟频率应该为Fosc&#x2F;(PSC+ 1)。其中Fosc是定时器的时钟源。比如想对时钟源进行72分频，那么预分频器的值就应该设置为71。</p>
+<p>预分频器值寄存器TIMx_PSC存在影子寄存器（官方翻译为缓冲功能），所以在定时器启动后更改TIMx_PSC的值并不会立即影响当前定时器的时钟频率。要等到下一个更新事件（UEV）发生时才会生效。比如下边这张图就体现了将分频系数由1修改为2（即TIMx_PSC由0更改为1）时整个定时器的时序图。</p>
+<p><img src="C:\Users\Answerfour\AppData\Roaming\Typora\typora-user-images\image-20240324104734248.png" alt="image-20240324104734248"></p>
+<p>更新事件（UEV）则由TIMx_CR1寄存器中的UDIS位控制，在启用时，会通过以下两种方式触发 ：</p>
+<ul>
+<li>计数器上溢</li>
+<li>手动将 TIMx_EGR 寄存器中的UG 位置 1</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/82590576">STM32定时器（TIM）之预分频器（PSC）详解 - 知乎 (zhihu.com)</a></p>
+<h4 id="2-3-1-定时中断"><a href="#2-3-1-定时中断" class="headerlink" title="2.3.1 定时中断"></a>2.3.1 定时中断</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">/*开启时钟*/</span>
 <span class="token function">RCC_APB1PeriphClockCmd</span><span class="token punctuation">(</span>RCC_APB1Periph_TIM2<span class="token punctuation">,</span> ENABLE<span class="token punctuation">)</span><span class="token punctuation">;</span>			<span class="token comment">//开启TIM2的时钟</span>
 <span class="token comment">/*配置时钟源*/</span>
 <span class="token function">TIM_InternalClockConfig</span><span class="token punctuation">(</span>TIM2<span class="token punctuation">)</span><span class="token punctuation">;</span>		<span class="token comment">//选择TIM2为内部时钟，若不调用此函数，TIM默认也为内部时钟</span>
@@ -625,7 +752,11 @@ TIM_TimeBaseInitStructure<span class="token punctuation">.</span>TIM_RepetitionC
 
 
 
-<h4 id="2-3-3-时钟输出比较"><a href="#2-3-3-时钟输出比较" class="headerlink" title="2.3.3 时钟输出比较"></a>2.3.3 时钟输出比较</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">/*开启时钟*/</span>
+<h4 id="2-3-3-时钟输出比较"><a href="#2-3-3-时钟输出比较" class="headerlink" title="2.3.3 时钟输出比较"></a>2.3.3 时钟输出比较</h4><p>•PWM频率： Freq &#x3D; CK_PSC &#x2F; (PSC + 1) &#x2F; (ARR + 1)</p>
+<p>•PWM占空比： Duty &#x3D; CCR &#x2F; (ARR + 1)</p>
+<p>•PWM分辨率： Reso &#x3D; 1 &#x2F; (ARR + 1)</p>
+<p><img src="C:\Users\Answerfour\AppData\Roaming\Typora\typora-user-images\image-20240324091032111.png" alt="image-20240324091032111"></p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">/*开启时钟*/</span>
 <span class="token function">RCC_APB1PeriphClockCmd</span><span class="token punctuation">(</span>RCC_APB1Periph_TIM2<span class="token punctuation">,</span> ENABLE<span class="token punctuation">)</span><span class="token punctuation">;</span>			<span class="token comment">//开启TIM2的时钟</span>
 <span class="token function">RCC_APB2PeriphClockCmd</span><span class="token punctuation">(</span>RCC_APB2Periph_GPIOA<span class="token punctuation">,</span> ENABLE<span class="token punctuation">)</span><span class="token punctuation">;</span>			<span class="token comment">//开启GPIOA的时钟</span>
 
@@ -681,7 +812,8 @@ TIM_OCInitStructure<span class="token punctuation">.</span>TIM_Pulse <span class
 <span class="token function">TIM_SetCompare1</span><span class="token punctuation">(</span>TIM2<span class="token punctuation">,</span> Compare<span class="token punctuation">)</span><span class="token punctuation">;</span>		<span class="token comment">//设置CCR1的值</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="2-3-4-时钟输入捕获"><a href="#2-3-4-时钟输入捕获" class="headerlink" title="2.3.4 时钟输入捕获"></a>2.3.4 时钟输入捕获</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">/*输入捕获初始化*/</span>
+<h4 id="2-3-4-时钟输入捕获"><a href="#2-3-4-时钟输入捕获" class="headerlink" title="2.3.4 时钟输入捕获"></a>2.3.4 时钟输入捕获</h4><p>PWMI接占空比</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">/*输入捕获初始化*/</span>
 TIM_ICInitTypeDef TIM_ICInitStructure<span class="token punctuation">;</span>							<span class="token comment">//定义结构体变量</span>
 TIM_ICInitStructure<span class="token punctuation">.</span>TIM_Channel <span class="token operator">=</span> TIM_Channel_1<span class="token punctuation">;</span>				<span class="token comment">//选择配置定时器通道1</span>
 TIM_ICInitStructure<span class="token punctuation">.</span>TIM_ICFilter <span class="token operator">=</span> <span class="token number">0xF</span><span class="token punctuation">;</span>							<span class="token comment">//输入滤波器参数，可以过滤信号抖动</span>
@@ -693,10 +825,34 @@ TIM_ICInitStructure<span class="token punctuation">.</span>TIM_ICSelection <span
 <span class="token comment">/*选择触发源及从模式*/</span>
 <span class="token function">TIM_SelectInputTrigger</span><span class="token punctuation">(</span>TIM3<span class="token punctuation">,</span> TIM_TS_TI1FP1<span class="token punctuation">)</span><span class="token punctuation">;</span>					<span class="token comment">//触发源选择TI1FP1</span>
 <span class="token function">TIM_SelectSlaveMode</span><span class="token punctuation">(</span>TIM3<span class="token punctuation">,</span> TIM_SlaveMode_Reset<span class="token punctuation">)</span><span class="token punctuation">;</span>					<span class="token comment">//从模式选择复位</span>
-                                                                <span class="token comment">//即TI1产生上升沿时，会触发CNT归零</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                                                                <span class="token comment">//即TI1产生上升沿时，会触发CNT归零</span>
+<span class="token function">TIM_PWMIConfig</span><span class="token punctuation">(</span>TIM3<span class="token punctuation">,</span> <span class="token operator">&amp;</span>TIM_ICInitStructure<span class="token punctuation">)</span><span class="token punctuation">;</span>						<span class="token comment">//将结构体变量交给TIM_PWMIConfig，配置TIM3的输入捕获通道</span>
+																	<span class="token comment">//此函数同时会把另一个通道配置为相反的配置，实现PWMI模式</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>编码器接口测速</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">/*输入捕获初始化*/</span>
+	TIM_ICInitTypeDef TIM_ICInitStructure<span class="token punctuation">;</span>							<span class="token comment">//定义结构体变量</span>
+	<span class="token function">TIM_ICStructInit</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>TIM_ICInitStructure<span class="token punctuation">)</span><span class="token punctuation">;</span>							<span class="token comment">//结构体初始化，若结构体没有完整赋值</span>
+																	<span class="token comment">//则最好执行此函数，给结构体所有成员都赋一个默认值</span>
+																	<span class="token comment">//避免结构体初值不确定的问题</span>
+	TIM_ICInitStructure<span class="token punctuation">.</span>TIM_Channel <span class="token operator">=</span> TIM_Channel_1<span class="token punctuation">;</span>				<span class="token comment">//选择配置定时器通道1</span>
+	TIM_ICInitStructure<span class="token punctuation">.</span>TIM_ICFilter <span class="token operator">=</span> <span class="token number">0xF</span><span class="token punctuation">;</span>							<span class="token comment">//输入滤波器参数，可以过滤信号抖动</span>
+	<span class="token function">TIM_ICInit</span><span class="token punctuation">(</span>TIM3<span class="token punctuation">,</span> <span class="token operator">&amp;</span>TIM_ICInitStructure<span class="token punctuation">)</span><span class="token punctuation">;</span>							<span class="token comment">//将结构体变量交给TIM_ICInit，配置TIM3的输入捕获通道</span>
+	TIM_ICInitStructure<span class="token punctuation">.</span>TIM_Channel <span class="token operator">=</span> TIM_Channel_2<span class="token punctuation">;</span>				<span class="token comment">//选择配置定时器通道2</span>
+	TIM_ICInitStructure<span class="token punctuation">.</span>TIM_ICFilter <span class="token operator">=</span> <span class="token number">0xF</span><span class="token punctuation">;</span>							<span class="token comment">//输入滤波器参数，可以过滤信号抖动</span>
+	<span class="token function">TIM_ICInit</span><span class="token punctuation">(</span>TIM3<span class="token punctuation">,</span> <span class="token operator">&amp;</span>TIM_ICInitStructure<span class="token punctuation">)</span><span class="token punctuation">;</span>							<span class="token comment">//将结构体变量交给TIM_ICInit，配置TIM3的输入捕获通道</span>
+	
+<span class="token comment">/*编码器接口配置*/</span>
+<span class="token function">TIM_EncoderInterfaceConfig</span><span class="token punctuation">(</span>TIM3<span class="token punctuation">,</span> TIM_EncoderMode_TI12<span class="token punctuation">,</span> TIM_ICPolarity_Rising<span class="token punctuation">,</span> TIM_ICPolarity_Rising<span class="token punctuation">)</span><span class="token punctuation">;</span>
+																<span class="token comment">//配置编码器模式以及两个输入通道是否反相</span>
+																<span class="token comment">//注意此时参数的Rising和Falling已经不代表上升沿和下降沿了，而是代表是否反相</span>
+																<span class="token comment">//此函数必须在输入捕获初始化之后进行，否则输入捕获的配置会覆盖此函数的部分配置</span>
+
+<span class="token comment">/*TIM使能*/</span>
+<span class="token function">TIM_Cmd</span><span class="token punctuation">(</span>TIM3<span class="token punctuation">,</span> ENABLE<span class="token punctuation">)</span><span class="token punctuation">;</span>			<span class="token comment">//使能TIM3，定时器开始运行</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="2-3-ADC"><a href="#2-3-ADC" class="headerlink" title="2.3 ADC"></a>2.3 ADC</h3><p>STM32F103C8T6 ADC资源：ADC1、ADC2，10个外部输入通道</p>
-
+<h3 id="2-4-DMA"><a href="#2-4-DMA" class="headerlink" title="2.4 DMA"></a>2.4 DMA</h3><h3 id="2-5-USART"><a href="#2-5-USART" class="headerlink" title="2.5 USART"></a>2.5 USART</h3><h3 id="2-6-I2C"><a href="#2-6-I2C" class="headerlink" title="2.6 I2C"></a>2.6 I2C</h3><h3 id="2-7-SPI"><a href="#2-7-SPI" class="headerlink" title="2.7 SPI"></a>2.7 SPI</h3>
                 
             </div>
             <hr/>
@@ -931,18 +1087,17 @@ TIM_ICInitStructure<span class="token punctuation">.</span>TIM_ICSelection <span
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/02/28/stm32-learning-notes/">
+                <a href="/2024/03/04/python-learning-notes/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="STM32 Learning Notes">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Python Learning Notes">
                         
-                        <span class="card-title">STM32 Learning Notes</span>
+                        <span class="card-title">Python Learning Notes</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -952,9 +1107,9 @@ TIM_ICInitStructure<span class="token punctuation">.</span>TIM_ICSelection <span
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-02-28
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-03-04
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -967,12 +1122,11 @@ TIM_ICInitStructure<span class="token punctuation">.</span>TIM_ICSelection <span
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/STM32/">
-                        <span class="chip bg-color">STM32</span>
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
                 </div>
@@ -986,13 +1140,13 @@ TIM_ICInitStructure<span class="token punctuation">.</span>TIM_ICSelection <span
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/02/16/linux-learning-notes/">
+                <a href="/2024/02/27/2024-02-27-NULL/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Linux Learning Notes">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="叠加态">
                         
-                        <span class="card-title">Linux Learning Notes</span>
+                        <span class="card-title">叠加态</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1003,14 +1157,14 @@ TIM_ICInitStructure<span class="token punctuation">.</span>TIM_ICSelection <span
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-02-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-02-27
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%AF%95%E8%AE%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    毕设学习笔记
+                            <a href="/categories/Life/" class="post-category">
+                                    Life
                                 </a>
                             
                             
@@ -1020,8 +1174,8 @@ TIM_ICInitStructure<span class="token punctuation">.</span>TIM_ICSelection <span
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Linux/">
-                        <span class="chip bg-color">Linux</span>
+                    <a href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/">
+                        <span class="chip bg-color">碎碎念</span>
                     </a>
                     
                 </div>

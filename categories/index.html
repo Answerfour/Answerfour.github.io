@@ -295,9 +295,7 @@
 
 
 <script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+    $('.bg-cover').css('background-image', 'url(/medias/banner/0.jpg)');
 </script>
 
 
@@ -318,20 +316,20 @@
                 
                 
                 
-                <a href="/categories/Life/" title="Life: 1">
+                <a href="/categories/Life/" title="Life: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             style="background-color: #F9EBEA;">Life
-                        <span class="tag-length">1</span>
+                        <span class="tag-length">2</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/%E6%AF%95%E8%AE%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="毕设学习笔记: 2">
+                <a href="/categories/%E6%AF%95%E8%AE%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="毕设学习笔记: 5">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             style="background-color: #F5EEF8;">毕设学习笔记
-                        <span class="tag-length">2</span>
+                        <span class="tag-length">5</span>
                     </span>
                 </a>
                 
@@ -378,7 +376,7 @@
                     color: '#3C4858'
                 }
             },
-            indicator: [{"name":"Life","max":3},{"name":"毕设学习笔记","max":3}],
+            indicator: [{"name":"Life","max":7},{"name":"毕设学习笔记","max":7}],
             nameGap: 5,
             center: ['50%','55%'],
             radius: '66%'
@@ -389,7 +387,7 @@
             itemStyle: {normal: {areaStyle: {type: 'default'}}},
             data : [
                 {
-                    value : [1,2],
+                    value : [2,5],
                     name : '文章分类数量'
                 }
             ]
